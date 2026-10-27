@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3309/outbound?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root123
+  data:
+    redis:
+      host: localhost
+      port: 6380
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5673
+
+freeswitch:
+  host: localhost
+  port: 8021
+  password: ClueCon
+
+llm:
+  api-url: https://api.deepseek.com/v1/chat/completions
+  api-key: ${DEEPSEEK_API_KEY:sk-mock}
+
+jwt:
+  secret: outbound-secret-key-change-in-production
+  expire: 86400000

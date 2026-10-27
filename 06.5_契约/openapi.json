@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Smart Outbound API", "version": "1.0.0" },
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "登录",
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object", "properties": { "username": { "type": "string" }, "password": { "type": "string" } } } } } },
+        "responses": { "200": { "description": "返回token" } }
+      }
+    },
+    "/api/flows": {
+      "get": { "summary": "流程列表", "responses": { "200": { "description": "流程数组" } } },
+      "post": { "summary": "新建流程", "responses": { "200": { "description": "创建后的流程" } } }
+    },
+    "/api/flows/{id}": {
+      "get": { "summary": "流程详情", "responses": { "200": { "description": "单个流程" } } },
+      "delete": { "summary": "删除流程", "responses": { "200": { "description": "ok" } } }
+    },
+    "/api/tasks": {
+      "get": { "summary": "任务列表", "responses": { "200": { "description": "任务数组" } } },
+      "post": { "summary": "创建任务", "responses": { "200": { "description": "创建后的任务" } } }
+    },
+    "/api/tasks/{id}/start": {
+      "post": { "summary": "启动任务", "responses": { "200": { "description": "ok" } } }
+    },
+    "/api/dashboard/stats": {
+      "get": { "summary": "看板统计", "responses": { "200": { "description": "统计数据" } } }
+    },
+    "/api/calls/stream": {
+      "get": { "summary": "SSE实时通话流", "responses": { "200": { "description": "SSE流" } } }
+    }
+  }
+}

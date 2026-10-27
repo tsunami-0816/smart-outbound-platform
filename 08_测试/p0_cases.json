@@ -1,0 +1,11 @@
+{
+  "p0_cases": [
+    { "id": "P0-001", "name": "登录返回token", "api": "POST /api/auth/login", "expected": "200 + token" },
+    { "id": "P0-002", "name": "创建对话流程", "api": "POST /api/flows", "expected": "200 + flowId" },
+    { "id": "P0-003", "name": "流程列表查询", "api": "GET /api/flows", "expected": "200 + array" },
+    { "id": "P0-004", "name": "创建外呼任务", "api": "POST /api/tasks", "expected": "200 + taskId" },
+    { "id": "P0-005", "name": "启动外呼任务", "api": "POST /api/tasks/{id}/start", "expected": "200" },
+    { "id": "P0-006", "name": "看板统计", "api": "GET /api/dashboard/stats", "expected": "200 + stats" },
+    { "id": "P0-007", "name": "无token访问返回401", "api": "GET /api/flows", "expected": "401" }
+  ]
+}
